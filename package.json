@@ -1,0 +1,25 @@
+{
+  "name": "rick-and-morty",
+  "version": "1.0.0",
+  "description": "Rick and Morty episode list",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "author": "Daniyar Kashkaraliev",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-router": "^7.14.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.10"
+  }
+}
