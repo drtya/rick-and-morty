@@ -3,17 +3,18 @@ import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import Episodes from "../pages/episodes/Episodes";
 import EpisodeById from "../pages/episodes/EpisodeById";
+import { Provider } from "react-redux";
+import store from "@/app/store";
+import Layout from "./layout";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    Component: Episodes,
-  },
-  {
-    path: "episode",
+    Component: Layout,
     children: [
+      { index: true, Component: Episodes },
       {
-        path: ":episodeId",
+        path: "/episode/:episodeId",
         Component: EpisodeById,
       },
     ],
@@ -23,5 +24,7 @@ const router = createBrowserRouter([
 const root = document.getElementById("root");
 
 ReactDOM.createRoot(root!).render(
+  <Provider store={store}>
     <RouterProvider router={router} />
+  </Provider>,
 );

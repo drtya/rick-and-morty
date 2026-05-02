@@ -20,8 +20,19 @@
 
 body {
   font-family: "Roboto", monospace;
-  background: var(--background);
+  background: url(../public/bg.jpg) center center/cover no-repeat fixed;
   color: var(--foreground);
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: -1;
+}
+a {
+  color: black;
+  text-decoration: none;
 }
 
 .flex-center {
