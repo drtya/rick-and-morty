@@ -3,7 +3,8 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
 }
-.title{
+.title {
+  color: white;
   font-size: 32px;
   margin-bottom: 20px;
 }
