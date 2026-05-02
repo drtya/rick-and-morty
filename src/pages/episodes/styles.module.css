@@ -1,0 +1,25 @@
+.episodGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+.title{
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1200px) {
+  .episodGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 740px) {
+  .episodGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 540px) {
+  .episodGrid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
