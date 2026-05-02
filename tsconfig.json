@@ -1,6 +1,9 @@
 {
   "include": ["src/**/*"],
   "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     "types": ["node", "vite/client"],
     "target": "ES2022",
     "module": "ES2022",
