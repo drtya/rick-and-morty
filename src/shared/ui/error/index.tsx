@@ -1,6 +1,8 @@
 import type { SerializedError } from "@reduxjs/toolkit";
 import styles from "./styles.module.css";
 import type { FetchBaseQueryError } from "@reduxjs/toolkit/query";
+import { Link } from "react-router";
+import Button from "../button/button";
 
 type Props = {
   message: FetchBaseQueryError | SerializedError;
@@ -17,7 +19,11 @@ const Error = ({ message }: Props) => {
         {isFetchError ? message.status : "Error"}
       </div>
       <div className={styles.message}>{errorText}</div>
-      <div className={styles.goBack}>Go home</div>
+      <Link to={"/"}>
+        <Button variant="outline" className={styles.goBack}>
+          Go home
+        </Button>
+      </Link>
     </div>
   );
 };

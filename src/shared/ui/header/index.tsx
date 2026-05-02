@@ -1,30 +1,18 @@
 import { Link } from "react-router";
 import styles from "./styles.module.css";
-import { useEffect, useState } from "react";
+import Button from "../button/button";
 
 const Header = () => {
-  const [headerInvisible, setHeaderInvisible] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setHeaderInvisible(window.scrollY < 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
   return (
-    <header
-      className={styles.headerOverlay}
-      style={{ opacity: headerInvisible ? 0.8 : 1, transition: "opacity 0.3s" }}
-    >
+    <header className={styles.headerOverlay}>
       <div className={"container" + " " + styles.header}>
         <Link className={styles.headerLogo} to={"/"}>
           Rick And Morty
         </Link>
         <nav>
-          <Link className={styles.navigation} to={"/"}>
+          <Button variant="link" to={"/"}>
             Эпизоды
-          </Link>
+          </Button>
         </nav>
       </div>
     </header>
