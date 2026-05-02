@@ -5,8 +5,8 @@
 }
 
 :root {
-  --background: oklch(87.759% 0.03476 108.95);
-  --foreground: oklch(0% 0 0);
+  --background: oklch(0% 0 0);
+  --foreground: oklch(100% 0.00011 271.152);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --primary: oklch(76.405% 0.12505 179.172);
@@ -27,7 +27,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.2);
   z-index: -1;
 }
 a {

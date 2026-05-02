@@ -4,8 +4,10 @@ import { useGetEpisodesQuery } from "@/entity/episode/api";
 import Loader from "@/shared/ui/loader";
 import { useCallback, useRef, useState } from "react";
 import Error from "@/shared/ui/error";
+import SearchInput from "@/shared/ui/searchInput";
 
 const Episodes = () => {
+  const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const {
     data: episodes,
@@ -13,7 +15,7 @@ const Episodes = () => {
     isError,
     isFetching,
     error,
-  } = useGetEpisodesQuery(page);
+  } = useGetEpisodesQuery({ page, search });
 
   const intersectionObs = useRef<IntersectionObserver>(null);
   const lastPostRef = useCallback(
@@ -29,6 +31,10 @@ const Episodes = () => {
     },
     [isLoading, episodes?.info.next],
   );
+  const searchHandler = (value: string) => {
+    setPage(1);
+    setSearch(value);
+  };
 
   if (isLoading)
     return (
@@ -40,16 +46,19 @@ const Episodes = () => {
 
   return (
     <section className="container section-spaces">
-        <h1 className={styles.title}>Список эпизодов</h1>
-        <div className={styles.episodGrid}>
-          {episodes?.results?.map((el, idx) => {
-            if (episodes.results.length === idx + 1) {
-              return <EpisodeCard ref={lastPostRef} key={el.id} episode={el} />;
-            }
-            return <EpisodeCard key={el.id} episode={el} />;
-          })}
-        </div>
-        {isFetching && episodes?.info.next && <Loader />}
+      <h1 className={styles.title}>Список эпизодов</h1>
+      <div style={{ display: "flex", justifyContent: "end" }}>
+        <SearchInput onChangeValue={searchHandler} />
+      </div>
+      <div className={styles.episodGrid}>
+        {episodes?.results?.map((el, idx) => {
+          if (episodes.results.length === idx + 1) {
+            return <EpisodeCard ref={lastPostRef} key={el.id} episode={el} />;
+          }
+          return <EpisodeCard key={el.id} episode={el} />;
+        })}
+      </div>
+      {isFetching && episodes?.info.next && <Loader />}
     </section>
   );
 };
