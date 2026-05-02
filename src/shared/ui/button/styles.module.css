@@ -1,0 +1,74 @@
+.button {
+  color: white;
+  display: inline-flex;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+  transition: all 300ms;
+  outline: none;
+  user-select: none;
+  padding: 8px 20px;
+}
+
+.button:active {
+  scale: 1.05;
+}
+
+.button:disabled {
+  background-color: var(--muted);
+  color: var(--muted-foreground);
+  border: none;
+  cursor: not-allowed;
+}
+
+.button svg {
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.button-default {
+  background-color: var(--primary);
+}
+
+.button-default:hover {
+  background-color: color-mix(in srgb, var(--primary) 80%, transparent);
+}
+
+.button-outline {
+  background-color: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.button-outline:hover {
+  background-color: var(--primary);
+  color: black;
+}
+
+.button-link {
+  padding: 0;
+  position: relative;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.button-link::after {
+  transition: 0.5s;
+  content: "";
+  position: absolute;
+  background: white;
+  width: 0px;
+  bottom: -2px;
+  height: 1px;
+  left: 0;
+}
+
+.button-link:hover::after {
+  width: 100%;
+}
