@@ -8,10 +8,6 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 }
 const EpisodeCard = forwardRef<HTMLElement, Props>(
   ({ episode, className, ...props }, ref) => {
-    const visibleCount = 6;
-    const visibleChars = episode.characters.slice(0, visibleCount);
-    const hiddenCount = episode.characters.length - visibleCount;
-
     const getInitials = (url: string) => {
       const id = url.split("/").pop() ?? "?";
       return `/episode/${id}`;
@@ -26,21 +22,9 @@ const EpisodeCard = forwardRef<HTMLElement, Props>(
         </div>
 
         <div className={styles.body}>
-          <p className={styles.sectionLabel}>Персонажи</p>
-          <div className={styles.characters}>
-            {visibleChars.map((url) => {
-              return (
-                <span key={url} className={styles.charChip}>
-                  Char
-                </span>
-              );
-            })}
-            {hiddenCount > 0 && (
-              <Link to={getInitials(episode.url)}>
-                <span className={styles.moreChip}>+{hiddenCount} ещё</span>
-              </Link>
-            )}
-          </div>
+          <Link to={episode.url} className={styles.sectionLabel}>
+            В эпизоде было замечено {episode.characters.length} персонажей
+          </Link>
 
           <div className={styles.divider} />
 
