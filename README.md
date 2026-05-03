@@ -6,9 +6,9 @@
 
 ## ⚙️ Инструменты
 
-*React v19.2.5
-*React-redux v9.2.0
-*React-router v7.14.2
+* React v19.2.5
+* React-redux v9.2.0
+* React-router v7.14.2
 
 Создал проект с нуля командой **npm init** 
 Установил зависимости и сонфигурации **eslint**, **tsconfig**, **vite**.
@@ -19,9 +19,7 @@
 ## Live версия сайта
 
 ![This is a main page.](/assets/mainPage.png)
-
 ![This is an episode page.](/assets/episodePage.png)
-
 
 [Rick And Morty](https://rick-morty-episodes.netlify.app)
 
