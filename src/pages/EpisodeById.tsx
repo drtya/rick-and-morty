@@ -4,6 +4,7 @@ import Loader from "@/shared/ui/loader";
 import styles from "./styles.module.css";
 import { Link, useParams } from "react-router";
 import Button from "@/shared/ui/button/button";
+import CharacterCard from "@/shared/ui/characterCard";
 
 const EpisodeById = () => {
   const { episodeId } = useParams();
@@ -31,7 +32,11 @@ const EpisodeById = () => {
       <h1 className={styles.title}>{episode?.name}</h1>
 
       <div className={styles.episodeGrid}>
-        <div className={styles.Characters}></div>
+        <div className={styles.characters}>
+          {episode.characters.map((url) => {
+            return <CharacterCard key={url} url={url} />;
+          })}
+        </div>
         <div>
           <div className={styles.episodeCard}>
             {season && (

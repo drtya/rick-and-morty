@@ -1,0 +1,47 @@
+.characterCard {
+  width: 100%;
+  background: color-mix(var(--background) 50%, transparent);
+  backdrop-filter: blur(2px);
+  padding: 20px;
+  border-radius: 10px;
+}
+.characterHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.characterAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+.characterName {
+  font-size: 18px;
+  font-weight: 700;
+}
+.characterGender {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.characterOrigin {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 3px;
+}
+.characterLocation {
+  font-size: 14px;
+  color: var(--muted);
+}
+.characterOrigin span {
+  color: var(--foreground);
+  letter-spacing: 1.2px;
+  font-weight: 600;
+}
+.characterLocation span {
+  color: var(--foreground);
+  letter-spacing: 1.2px;
+  font-weight: 600;
+}
