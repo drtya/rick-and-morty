@@ -8,6 +8,38 @@
   font-size: 32px;
   margin-bottom: 20px;
 }
+.episodeGrid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 20px;
+}
+.episodeCard {
+  margin-bottom: 30px;
+  text-align: end;
+  margin-left: auto;
+  background: #00000091;
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 20px;
+}
+.episodeLabel {
+  text-transform: uppercase;
+  font-weight: 100;
+  color: var(--muted);
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+.episodeInfo {
+  margin-bottom: 10px;
+  font-size: 18px;
+  padding-bottom: 10px;
+  border-bottom: 0.5px solid var(--muted-foreground);
+}
+.episodeInfo:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
 
 @media (max-width: 1200px) {
   .episodGrid {
